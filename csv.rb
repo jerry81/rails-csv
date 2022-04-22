@@ -5,7 +5,7 @@ CSV.foreach(file_path, headers: true) do |line|
     puts "line is #{line}"
     begin
         raise "fu" if line.fetch("symbol") == "Wb"
-    rescue 
+    rescue StandardError
         puts "skipping" 
         next
     end
